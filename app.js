@@ -9,6 +9,16 @@
   let paused = reduceMotion;
   let timer;
 
+  const header = document.querySelector('[data-header]');
+  const year = document.querySelector('[data-year]');
+  if (header) {
+    addEventListener('scroll', () => header.classList.toggle('is-scrolled', scrollY > 80), {passive:true});
+  }
+  if (year) year.textContent = new Date().getFullYear();
+
+  /* Interior pages share this file but do not include the homepage carousel. */
+  if (!carousel || !slides.length || !current || !progress || !pauseButton) return;
+
   function show(next) {
     index = (next + slides.length) % slides.length;
     slides.forEach((slide, i) => {
@@ -60,8 +70,6 @@
     });
   }
 
-  addEventListener('scroll', () => document.querySelector('[data-header]').classList.toggle('is-scrolled', scrollY > 80), {passive:true});
-  document.querySelector('[data-year]').textContent = new Date().getFullYear();
   show(0);
   if (reduceMotion) { pauseButton.textContent = '▶'; pauseButton.setAttribute('aria-label', '繼續輪播'); }
   schedule();

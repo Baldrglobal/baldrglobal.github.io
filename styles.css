@@ -231,3 +231,80 @@ h1, h2, h3, h4, .slide h1, .slide h2, .section h2, .training-banner h2, .contact
   -webkit-user-drag: none;
   user-drag: none;
 }
+
+/* Responsive composition: preserve readable lines instead of shrinking the desktop layout. */
+html, body { max-width: 100%; overflow-x: clip; }
+h1, h2, h3, h4,
+.slide h1, .slide h2,
+.section h2, .training-banner h2, .contact-section h2 {
+  word-break: keep-all;
+  overflow-wrap: normal;
+  text-wrap: balance;
+}
+
+@media (max-width: 1180px) {
+  .site-header { padding-left: 22px; padding-right: 22px; }
+  .site-nav { gap: clamp(12px, 1.7vw, 22px); font-size: 13px; }
+}
+
+@media (max-width: 980px) {
+  :root { --header: 112px; }
+  .site-header {
+    height: var(--header);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    align-content: center;
+    gap: 2px;
+    padding: 7px 20px 9px;
+  }
+  .site-header .brand {
+    width: max-content;
+    min-height: 52px;
+    align-self: auto;
+  }
+  .site-nav,
+  .site-nav.is-open {
+    width: 100%;
+    min-width: 0;
+    justify-content: flex-start;
+    gap: 22px;
+    padding: 2px 0 5px;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scrollbar-width: none;
+    white-space: nowrap;
+    font-size: 13px;
+  }
+  .site-nav::-webkit-scrollbar { display: none; }
+  .nav-cta { padding-right: 2px; }
+  .section-head { gap: 18px; }
+  .intro { row-gap: 28px; }
+}
+
+@media (max-width: 700px) {
+  :root { --header: 104px; }
+  .site-header { padding: 5px 16px 8px; }
+  .site-header .brand { min-height: 47px; }
+  .brand-original { width: 124px; height: 46px; }
+  .site-nav,
+  .site-nav.is-open { gap: 18px; font-size: 12px; }
+
+  .section,
+  .about-balder { padding: 34px 18px; }
+  .section h2,
+  .training-banner h2,
+  .contact-section h2 { font-size: clamp(30px, 9vw, 42px); line-height: 1.3; }
+  .section-head { margin-bottom: 22px; }
+  .section-head > p { font-size: 15px; }
+
+  .service-card { min-height: 0; padding: 22px 20px; }
+  .service-card h3 { font-size: 26px; }
+  .advantage-grid > div { padding: 18px 0 12px; }
+  .training-banner,
+  .contact-section { padding: 40px 18px; gap: 24px; }
+  .article-grid { gap: 32px; }
+  .article-grid h3 { font-size: 20px; line-height: 1.5; }
+  .article-cover-copy { left: 18px; right: 18px; bottom: 16px; }
+  .article-cover-copy strong { font-size: 21px; }
+  .site-footer { padding: 38px 18px 24px; }
+}

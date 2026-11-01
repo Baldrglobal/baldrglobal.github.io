@@ -160,3 +160,46 @@
   .profile-tags { gap: 4px; margin-top: 10px; }
   .profile-tags span { font-size: 9px; }
 }
+
+/* Phone profile: portrait, credentials and name become a deliberate vertical story. */
+@media (max-width: 700px) {
+  .profile-hero {
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: 24px;
+    padding: calc(var(--header) + 28px) 18px 34px;
+  }
+  .profile-hero-photo {
+    grid-column: 1;
+    width: min(76vw, 300px);
+    height: auto;
+    aspect-ratio: 4 / 5;
+    justify-self: center;
+  }
+  .profile-hero-copy {
+    grid-column: 1;
+    width: 100%;
+    height: auto;
+    padding: 0;
+  }
+  .profile-lead { font-size: 15px; line-height: 1.75; }
+  .profile-tags { gap: 6px; margin-top: 14px; }
+  .profile-tags span { font-size: 10px; }
+  .profile-hero h1 {
+    margin: 24px 0 0;
+    font-size: clamp(42px, 13vw, 62px);
+    line-height: 1;
+    white-space: normal;
+  }
+  .profile-hero h1 span { display: inline-block; margin: 0 0 0 .18em; font-size: .4em; }
+  .profile-back { margin-top: 0; }
+  .profile-section { padding: 42px 18px; }
+  .profile-intro { gap: 22px; }
+  .profile-section-head { margin-bottom: 22px; }
+  .profile-card-grid article { padding: 20px 18px; }
+  .award-paper { padding: 22px 18px; }
+  .publication-list article { grid-template-columns: 58px minmax(0, 1fr); gap: 14px; }
+  .publication-list h3 { overflow-wrap: anywhere; }
+  .profile-cta { padding: 44px 18px; gap: 20px; }
+  .profile-cta h2 { font-size: clamp(36px, 10vw, 48px); }
+}
