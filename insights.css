@@ -30,6 +30,12 @@
 .insight-list-card { background: #fff; border: 1px solid var(--line); }
 .insight-list-card .insight-cover { aspect-ratio: 2 / 1; }
 .insight-list-card .insight-cover > div { left: 24px; right: 18%; bottom: 22px; }
+.article-longform h2 { margin: 2.4em 0 .8em; font-size: clamp(26px, 3vw, 38px); line-height: 1.4; }
+.article-longform h3 { margin: 2em 0 .65em; font-size: clamp(20px, 2vw, 25px); line-height: 1.5; }
+.article-figure { margin: 46px 0; }
+.article-figure img { display: block; width: 100%; height: auto; border: 1px solid var(--line); }
+.article-figure figcaption { margin-top: 10px; color: var(--muted); font-size: 13px; }
+.article-note { margin-top: 36px !important; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
 .insight-card-copy { padding: 24px; }
 .insight-card-copy p { margin: 0; color: #a71922; font-size: 12px; }
 .insight-card-copy h2 { margin: 8px 0 10px; font-size: 24px; line-height: 1.4; }
@@ -92,5 +98,7 @@
   .article-page-main .insight-cover { height: 230px; aspect-ratio: auto; }
   .article-body { font-size: 16px; line-height: 1.9; }
   .article-body p:first-child { font-size: 18px; }
+  .article-figure { margin: 32px -18px; }
+  .article-figure figcaption { padding: 0 18px; }
   .article-end-nav { flex-direction: column; gap: 10px; }
 }

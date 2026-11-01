@@ -34,6 +34,7 @@
 .article-visual.one { background: linear-gradient(135deg, #211719, #ad2a31); }
 .article-visual.two { background: repeating-linear-gradient(45deg, #d8d0ca 0 20px, #861c23 20px 40px); }
 .article-visual.three { background: radial-gradient(circle at 35% 40%, #e04b52 0 15%, transparent 16%), linear-gradient(135deg, #171313, #8c242a); }
+.article-visual.pif { background: radial-gradient(circle at 82% 24%, rgba(155,29,37,.7), transparent 27%), repeating-linear-gradient(120deg, transparent 0 54px, rgba(215,181,91,.09) 55px 56px), linear-gradient(135deg, #100d0d, #4d1218 70%, #1b1516); }
 .article-grid .meta { color: #9b3439; }
 .contact-actions small { color: #8e292e; }
 .site-footer { background: #0e0b0c; }
